@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<head>	
+<head>  
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -11,21 +11,21 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/demo.css">
 
-	<title>jQuery Final Countdown Plugin</title>
+    <title>jQuery Final Countdown Plugin</title>
 </head>
 
 <body>
 
-<div class="countdown countdown-container container"
-     data-start="1362139200"
-     data-end="1388461320"
-     data-now="1387461319"
-     data-border-color="rgba(255, 255, 255, .8)">
+<div id="countdown1" class="countdown countdown-container container"
+    data-start="1362139200"
+    data-end="1388461320"
+    data-now="1387461319"
+    data-border-color="rgba(255, 255, 255, .8)">
     <div class="clock row">
         <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
             <div class="wrap">
                 <div class="inner">
-                    <div id="canvas-days" class="clock-canvas"></div>
+                    <div id="countdown1-canvas-days" class="clock-canvas"></div>
 
                     <div class="text">
                         <p class="val">0</p>
@@ -38,7 +38,7 @@
         <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
             <div class="wrap">
                 <div class="inner">
-                    <div id="canvas-hours" class="clock-canvas"></div>
+                    <div id="countdown1-canvas-hours" class="clock-canvas"></div>
 
                     <div class="text">
                         <p class="val">0</p>
@@ -51,7 +51,7 @@
         <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
             <div class="wrap">
                 <div class="inner">
-                    <div id="canvas-minutes" class="clock-canvas"></div>
+                    <div id="countdown1-canvas-minutes" class="clock-canvas"></div>
 
                     <div class="text">
                         <p class="val">0</p>
@@ -64,7 +64,7 @@
         <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
             <div class="wrap">
                 <div class="inner">
-                    <div id="canvas-seconds" class="clock-canvas"></div>
+                    <div id="countdown1-canvas-seconds" class="clock-canvas"></div>
 
                     <div class="text">
                         <p class="val">0</p>
@@ -76,13 +76,92 @@
     </div><!-- /.clock -->
 </div><!-- /.countdown-wrapper -->
 
+<div id="countdown2" class="countdown countdown-container container"
+    data-start="1362139200"
+    data-end="1388461320"
+    data-now="1387461319"
+    data-border-color="rgba(255, 255, 255, .8)">
+    <div class="clock row">
+        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+            <div class="wrap">
+                <div class="inner">
+                    <div id="countdown2-canvas-days" class="clock-canvas"></div>
 
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type-days type-time">DAYS</p>
+                    </div><!-- /.text -->
+                </div><!-- /.inner -->
+            </div><!-- /.wrap -->
+        </div><!-- /.clock-item -->
+
+        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+            <div class="wrap">
+                <div class="inner">
+                    <div id="countdown2-canvas-hours" class="clock-canvas"></div>
+
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type-hours type-time">HOURS</p>
+                    </div><!-- /.text -->
+                </div><!-- /.inner -->
+            </div><!-- /.wrap -->
+        </div><!-- /.clock-item -->
+
+        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+            <div class="wrap">
+                <div class="inner">
+                    <div id="countdown2-canvas-minutes" class="clock-canvas"></div>
+
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type-minutes type-time">MINUTES</p>
+                    </div><!-- /.text -->
+                </div><!-- /.inner -->
+            </div><!-- /.wrap -->
+        </div><!-- /.clock-item -->
+
+        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+            <div class="wrap">
+                <div class="inner">
+                    <div id="countdown2-canvas-seconds" class="clock-canvas"></div>
+
+                    <div class="text">
+                        <p class="val">0</p>
+                        <p class="type-seconds type-time">SECONDS</p>
+                    </div><!-- /.text -->
+                </div><!-- /.inner -->
+            </div><!-- /.wrap -->
+        </div><!-- /.clock-item -->
+    </div><!-- /.clock -->
+</div><!-- /.countdown-wrapper -->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/kinetic.js"></script>
 <script type="text/javascript" src="../jquery.final-countdown.js"></script>
-<script type="text/javascript">
-	$('.countdown').final_countdown();
+<script type="text/javascript">  
+    $('document').ready(function() {
+        'use strict';
+        $('.countdown').each(function(){
+            var id = $(this).attr('id');
+            $(this).final_countdown({
+                'start': 1362139200,
+                'end': 1388461320,
+                'now': 1387461319,
+                selectors: {
+                    value_seconds: '#'+id+' .clock-seconds .val',
+                    canvas_seconds: id+'-canvas-seconds',
+                    value_minutes: '#'+id+' .clock-minutes .val',
+                    canvas_minutes: id+'-canvas-minutes',
+                    value_hours: '#'+id+' .clock-hours .val',
+                    canvas_hours: id+'-canvas-hours',
+                    value_days: '#'+id+' .clock-days .val',
+                    canvas_days: id+'-canvas-days'
+                }
+            });
+        });
+        
+    });
 </script>
 
 </body>

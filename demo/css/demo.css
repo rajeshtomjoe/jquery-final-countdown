@@ -12,25 +12,20 @@ html {
 body {
 	background-color: rgba(44,62,80 , 0.6 );
 	background-image: url('../img/pattern.png');
-	background-position: center;
+	background-position: center center;
 	background-repeat: repeat;
 	font-family: 'Raleway', 'Arial', sans-serif;
 }
 
 .countdown-container {
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	transform: translateY(-50%);
-
+	padding: 40px 0;
 }
 
 .clock-item .inner {
 	height: 0px;
-	padding-bottom: 100%;
+	padding-bottom: 80%;
 	position: relative;	
-	width: 100%;
+	width: 80%;
 }
 
 .clock-canvas {
@@ -42,7 +37,7 @@ body {
 
 .text {
 	color: #fff;	
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;	
 	margin-top: -50px;
 	position: absolute;
@@ -53,11 +48,11 @@ body {
 }
 
 .text .val {
-	font-size: 50px;
+	font-size: 40px;
 }
 
 .text .type-time {
-	font-size: 20px;
+	font-size: 10px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

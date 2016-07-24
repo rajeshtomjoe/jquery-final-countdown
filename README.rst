@@ -1,8 +1,15 @@
 jQuery Final Countdown
 ======================
 
+Single Countdown Demo
+
 - http://final-countdown.pragmaticmates.com/demo/index.html
 - http://final-countdown.pragmaticmates.com/demo/data-attributes.html
+
+Multiple Countdowns Demo
+
+- http://demos.rajeshtomjoe.com/jquery-final-countdown/demo/index.html
+- http://demos.rajeshtomjoe.com/jquery-final-countdown/demo/data-attributes.html
 
 Requirements
 ------------
@@ -137,3 +144,8 @@ Sample attributes for contdown container
              REST OF HTML HERE
 
         </div>       
+
+Multiple Countdown
+------------------
+
+Please refer to demo/index.html for the HTML markup and JavaScript Usage
